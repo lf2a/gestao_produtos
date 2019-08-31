@@ -131,6 +131,6 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = 'produto_lista'
 
-STATICFILES_DIRS = [
-    'statics',
-]
+# STATICFILES_DIRS = [
+#     'statics',
+# ]
