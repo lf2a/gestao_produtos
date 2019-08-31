@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %} Gestão de Produtos {% endblock %}
+
+{% block main %}
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      {% if user.is_authenticated %}
+      <h5 class="card-title">Olá {{ user.username }}</h5>
+      <a href="{% url 'logout' %}" class="card-link btn btn-outline-danger">Sair</a>
+      <a href="{% url 'produto_lista' %}" class="card-link btn btn-outline-success">Produtos</a>
+      {% else %}
+        <h5 class="card-title">Você não está logado</h5>
+        <a href="{% url 'login' %}" class="card-link btn btn-outline-success">Etrar</a>
+      {% endif %}
+    </div>
+  </div>
+
+{% endblock %}

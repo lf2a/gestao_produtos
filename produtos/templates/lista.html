@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Gestão de Produtos - visualizar {% endblock %}
+
+{% block main %}
+
+
+
+  <ul class="list-group" style="list-style: none;">
+    {% for p in produtos %}
+      <li class="list-group-item">
+        <a href="{% url 'produto_altera' p.id %}" class="btn btn-outline-dark">{{ p.nome }} - {{ p.valor }}</a>
+        <a href="{% url 'produto_exclui' p.id %}" class="lft btn btn-outline-danger" style="float:right; margin: 0 10px;">Excluir</a>
+      </li>
+    {% endfor %}
+    <li class="list-group-item active">
+      <a href="{% url 'produto_novo' %}" class="btn btn-outline-light">Novo Produto</a>
+      <a href="{% url 'home' %}" class="btn btn-outline-light">Home</a>
+    </li>
+  </ul>
+
+{% endblock %}

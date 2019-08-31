@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block title %} Gestão de Produtos - adicionar {% endblock %}
+
+{% block main %}
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form | bootstrap }}
+    <button type="submit" class="btn btn-success">Salvar</button>
+  </form>
+
+{% endblock %}
